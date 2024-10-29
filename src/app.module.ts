@@ -4,6 +4,7 @@ import { ENVS } from './Shared/domain/config/schema-env-variables';
 import { EnvVariablesService } from './Shared/domain/config/env-variables.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerModule } from 'nestjs-pino';
+import { StationModule } from './Station/station.module';
 @Module({
   imports: [
     MongooseModule.forRootAsync({
@@ -34,6 +35,7 @@ import { LoggerModule } from 'nestjs-pino';
         },
       },
     }),
+    StationModule,
     SharedModule,
   ],
 })
